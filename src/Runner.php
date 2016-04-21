@@ -5,9 +5,9 @@
    * Time: 19:21
    */
 
-  namespace crispyocto;
-  
-  class runner {
+  namespace CrispyOcto;
+
+  class Runner {
 
     private $connection;
 
@@ -18,6 +18,10 @@
      */
     public function __construct($connection) {
       $this->connection = $connection;
+    }
+
+    public function sum($a, $b) {
+      return $a + $b;
     }
 
 

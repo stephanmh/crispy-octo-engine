@@ -5,4 +5,5 @@
    * Time: 20:34
    */
 
-include_once ('../vendor/autoload.php');
+require ('../vendor/autoload.php');
+

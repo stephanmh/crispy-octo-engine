@@ -43,6 +43,16 @@
             depends="lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
             description="Performs static analysis" />
 
+
+    <target name="composer" description="Installing composer dependencies">
+        <exec executable="composer" failonerror="true">
+            <arg value="install" />
+            <arg value="--dev" />
+            <arg value="--prefer-dist" />
+            <arg value="--no-progress" />
+        </exec>
+    </target>
+
     <!-- Adjust the threadCount attribute's value to the number of CPUs -->
     <target name="static-analysis-parallel"
             description="Performs static analysis (executing the tools in parallel)">
@@ -71,7 +81,7 @@
 
     <target name="prepare"
             unless="prepare.done"
-            depends="clean"
+            depends="clean,composer"
             description="Prepare for build">
         <mkdir dir="${basedir}/build/api"/>
         <mkdir dir="${basedir}/build/coverage"/>
