@@ -1,0 +1,6 @@
+<ruleset name="amazelings codeing standard">
+    <description>Description of your coding standard</description>
+
+    <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+    <!-- ... -->
+</ruleset>
