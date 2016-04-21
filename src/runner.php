@@ -6,8 +6,7 @@
    */
 
   namespace crispyocto;
- intentional error
-
+  
   class runner {
 
     private $connection;
