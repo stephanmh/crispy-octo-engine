@@ -6,7 +6,7 @@
    */
 
   namespace crispyocto;
-
+ intentional error
 
   class runner {
 
