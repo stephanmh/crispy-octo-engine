@@ -12,4 +12,14 @@
 
     private $connection;
 
+    /**
+     * runner constructor.
+     *
+     * @param $connection
+     */
+    public function __construct($connection) {
+      $this->connection = $connection;
+    }
+
+
   }
