@@ -6,9 +6,9 @@
          verbose="true">
 
     <testsuites>
-        <testsuite name="ProjectName">
-            <directory suffix="Test.php">../tests/unit/</directory>
-            <directory suffix="Test.php">../tests/integration/</directory>
+        <testsuite name="crispy-octo-engine">
+            <directory suffix="Test.php">../tests/unit/crispyocto</directory>
+            <directory suffix="Test.php">../tests/integration/crispyocto</directory>
         </testsuite>
     </testsuites>
 
