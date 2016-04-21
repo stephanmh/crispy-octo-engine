@@ -2,14 +2,11 @@
   /**
    * User: stephan
    * Date: 21-04-16
-   * Time: 22:03
+   * Time: 22:18
    */
-
   namespace CrispyOcto;
 
-
-  abstract class Engine implements EngineInterface {
-
+  interface EngineInterface {
     /** @return FuelInterface */
-    abstract public function getFuel();
+    public function getFuel();
   }

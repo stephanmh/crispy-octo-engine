@@ -10,4 +10,9 @@
 
   class Gasoline extends Fuel{
     const name = 'gas';
+
+
+    public function getName() {
+      return self::name;
+    }
   }

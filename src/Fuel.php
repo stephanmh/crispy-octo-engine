@@ -8,6 +8,8 @@
   namespace CrispyOcto;
 
 
-  abstract class Fuel {     
+  abstract class Fuel implements FuelInterface {
+
+    abstract public function getName();
 
   }

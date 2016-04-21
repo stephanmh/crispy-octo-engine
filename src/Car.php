@@ -8,19 +8,19 @@
   namespace CrispyOcto;
 
 
-  abstract class Car {
-    /** @var  Engine */
+  abstract class Car implements CarInterface {
+    /** @var  EngineInterface */
       protected $engine;
 
     /**
-     * @return \CrispyOcto\Engine
+     * @return EngineInterface
      */
     public function getEngine() {
       return $this->engine;
     }
 
     /**
-     * @param \CrispyOcto\Engine $engine
+     * @param EngineInterface $engine
      */
     public function setEngine($engine) {
       $this->engine = $engine;
