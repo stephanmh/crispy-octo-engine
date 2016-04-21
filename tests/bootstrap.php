@@ -5,5 +5,5 @@
    * Time: 20:34
    */
 
-require ('../vendor/autoload.php');
+require (__DIR__.'/../vendor/autoload.php');
 
