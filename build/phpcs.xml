@@ -1,41 +1,36 @@
-<code_scheme name="Default (1)">
-  <PHPCodeStyleSettings>
-    <option name="INDENT_CODE_IN_PHP_TAGS" value="true" />
-    <option name="ALIGN_KEY_VALUE_PAIRS" value="true" />
-    <option name="PHPDOC_BLANK_LINE_BEFORE_TAGS" value="true" />
-    <option name="PHPDOC_BLANK_LINES_AROUND_PARAMETERS" value="true" />
-    <option name="PHPDOC_WRAP_LONG_LINES" value="true" />
-    <option name="UPPER_CASE_BOOLEAN_CONST" value="true" />
-    <option name="UPPER_CASE_NULL_CONST" value="true" />
-    <option name="KEEP_RPAREN_AND_LBRACE_ON_ONE_LINE" value="true" />
-    <option name="PHPDOC_USE_FQCN" value="true" />
-  </PHPCodeStyleSettings>
-  <XML>
-    <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
-  </XML>
-  <codeStyleSettings language="PHP">
-    <option name="RIGHT_MARGIN" value="80" />
-    <option name="BLANK_LINES_AFTER_PACKAGE" value="1" />
-    <option name="CLASS_BRACE_STYLE" value="1" />
-    <option name="METHOD_BRACE_STYLE" value="1" />
-    <option name="ELSE_ON_NEW_LINE" value="true" />
-    <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
-    <option name="SPACE_AFTER_TYPE_CAST" value="true" />
-    <option name="CALL_PARAMETERS_WRAP" value="1" />
-    <option name="METHOD_PARAMETERS_WRAP" value="5" />
-    <option name="METHOD_PARAMETERS_LPAREN_ON_NEXT_LINE" value="true" />
-    <option name="METHOD_PARAMETERS_RPAREN_ON_NEXT_LINE" value="true" />
-    <option name="METHOD_CALL_CHAIN_WRAP" value="5" />
-    <option name="ARRAY_INITIALIZER_WRAP" value="5" />
-    <option name="ARRAY_INITIALIZER_LBRACE_ON_NEXT_LINE" value="true" />
-    <option name="ARRAY_INITIALIZER_RBRACE_ON_NEXT_LINE" value="true" />
-    <option name="IF_BRACE_FORCE" value="3" />
-    <option name="DOWHILE_BRACE_FORCE" value="3" />
-    <option name="WHILE_BRACE_FORCE" value="3" />
-    <option name="FOR_BRACE_FORCE" value="3" />
-    <indentOptions>
-      <option name="INDENT_SIZE" value="2" />
-      <option name="CONTINUATION_INDENT_SIZE" value="2" />
-    </indentOptions>
-  </codeStyleSettings>
-</code_scheme>
+<?xml version="1.0"?>
+<ruleset name="Sebastian">
+    <description>Sebastian Bergmann's coding standard</description>
+
+    <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
+    <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
+    <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
+    <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+    <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+
+    <rule ref="Generic.Commenting.Todo"/>
+
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+
+    <rule ref="Generic.Files.LineEndings"/>
+
+    <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+    <rule ref="Generic.Formatting.MultipleStatementAlignment"/>
+    <rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+
+    <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+    <rule ref="PEAR.Functions.ValidDefaultValue"/>
+
+    <rule ref="Generic.NamingConventions.ConstructorName"/>
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+    <rule ref="PEAR.NamingConventions.ValidClassName"/>
+
+    <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+    <rule ref="Generic.PHP.NoSilencedErrors"/>
+    <rule ref="Generic.PHP.UpperCaseConstant"/>
+
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+</ruleset>
