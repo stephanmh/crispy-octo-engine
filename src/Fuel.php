@@ -8,6 +8,11 @@
   namespace CrispyOcto;
 
 
+  /**
+   * Class Fuel
+   *
+   * @package CrispyOcto
+   */
   abstract class Fuel implements FuelInterface {
 
     abstract public function getName();

@@ -6,6 +6,11 @@
    */
   namespace CrispyOcto;
 
+  /**
+   * Interface EngineInterface
+   *
+   * @package CrispyOcto
+   */
   interface EngineInterface {
     /** @return FuelInterface */
     public function getFuel();
