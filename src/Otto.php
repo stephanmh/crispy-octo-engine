@@ -6,9 +6,17 @@
    */
 
   namespace CrispyOcto;
-  
+
+  /**
+   * Class Otto
+   *
+   * @package CrispyOcto
+   */
   class Otto extends Engine{
 
+    /**
+     * @return string
+     */
     public function getFuel() {
       return Gasoline::name;
     }

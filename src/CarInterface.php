@@ -6,6 +6,11 @@
    */
   namespace CrispyOcto;
 
+  /**
+   * Interface CarInterface
+   *
+   * @package CrispyOcto
+   */
   interface CarInterface {
     /**
      * @return EngineInterface

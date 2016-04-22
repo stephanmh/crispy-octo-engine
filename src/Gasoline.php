@@ -8,10 +8,18 @@
   namespace CrispyOcto;
 
 
+  /**
+   * Class Gasoline
+   *
+   * @package CrispyOcto
+   */
   class Gasoline extends Fuel{
     const name = 'gas';
 
 
+    /**
+     * @return string
+     */
     public function getName() {
       return self::name;
     }

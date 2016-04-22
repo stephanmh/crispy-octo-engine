@@ -8,6 +8,11 @@
   namespace CrispyOcto;
 
 
+  /**
+   * Class Car
+   *
+   * @package CrispyOcto
+   */
   abstract class Car implements CarInterface {
     /** @var  EngineInterface */
       protected $engine;
