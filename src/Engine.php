@@ -8,6 +8,11 @@
   namespace CrispyOcto;
 
 
+  /**
+   * Class Engine
+   *
+   * @package CrispyOcto
+   */
   abstract class Engine implements EngineInterface {
 
     /** @return FuelInterface */
