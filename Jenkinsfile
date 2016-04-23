@@ -3,13 +3,14 @@
         stage 'Dev'
         node {
         checkout scm
-        //mvn 'clean package'
-        //dir('target') {stash name: 'war', includes: 'x.war'}
+        ant 'clean'
         }
 
         stage 'QA'
         node{
         ant 'lint'
+        ant 'phpunit'
+        ant 'static-analysis'
         }
 
 
