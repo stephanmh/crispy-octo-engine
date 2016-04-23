@@ -8,11 +8,9 @@
         }
 
         stage 'QA'
-        parallel(longerTests: {
-        runTests(30)
-        }, quickerTests: {
-        runTests(20)
-        })
+        node{
+        ant 'lint'
+        }
 
 
         stage name: 'Staging', concurrency: 1
@@ -47,7 +45,9 @@
         //sh "${tool 'Maven 3.x'}/bin/mvn ${args}"
         }
 
-
+        def ant(args) {
+        sh "${tool 'ant197'}/bin/ant ${args}"
+        }
 
         def runTests(duration) {
         node {
