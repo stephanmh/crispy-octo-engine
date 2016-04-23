@@ -20,7 +20,7 @@
         deploy 'staging'
         }
 
-        if(${env.BRANCH_NAME}=='master'){
+        if(env.BRANCH_NAME)=='master'){
 
         input message: "Does staging look good?"
         try {
