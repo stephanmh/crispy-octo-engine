@@ -20,7 +20,7 @@
         deploy 'staging'
         }
 
-        if(env.BRANCH_NAME)=='master'){
+        if(env.BRANCH_NAME=='master'){
 
         input message: "Does staging look good?"
         try {
@@ -36,6 +36,11 @@
         echo "Deployed to production"
         }
 
+        }
+
+       stage name : 'Notify'
+        node {
+        echo 'hello world'
         }
 
         def mvn(args) {
