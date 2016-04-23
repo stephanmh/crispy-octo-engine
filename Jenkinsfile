@@ -28,6 +28,12 @@
         echo 'Checkpoint feature available in CloudBees Jenkins Enterprise.'
         }
 
+        stage name: 'Documentation'
+        node {
+        ant 'phpdox'
+        publishHTML(target : [allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'build/api', reportFiles: 'index.html', reportName: 'Api Documentation'])
+        }
+
         stage name: 'Production', concurrency: 1
         node {
         echo 'Production server looks to be alive'
