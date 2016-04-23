@@ -20,6 +20,8 @@
         deploy 'staging'
         }
 
+        if(${env.BRANCH_NAME}=='master'){
+
         input message: "Does staging look good?"
         try {
         checkpoint('Before production')
@@ -32,6 +34,8 @@
         echo 'Production server looks to be alive'
         deploy 'production'
         echo "Deployed to production"
+        }
+
         }
 
         def mvn(args) {
