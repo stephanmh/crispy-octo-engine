@@ -269,7 +269,7 @@
         <property name="phpdox.done" value="true"/>
     </target>
 
-    <target name="-check-failure">
+    <target name="phpunit-check-failure">
         <fail message="PHPUnit did not finish successfully">
             <condition>
                 <not>

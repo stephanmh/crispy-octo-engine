@@ -10,6 +10,7 @@
         node{
         ant 'lint'
         ant 'phpunit'
+        ant 'phpunit-check-failure'
         ant 'static-analysis'
         }
 
