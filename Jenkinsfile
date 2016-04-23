@@ -3,16 +3,15 @@
         stage 'Dev'
         node {
         checkout scm
-        //mvn 'clean package'
-        //dir('target') {stash name: 'war', includes: 'x.war'}
+        ant 'clean'
         }
 
         stage 'QA'
-        parallel(longerTests: {
-        runTests(30)
-        }, quickerTests: {
-        runTests(20)
-        })
+        node{
+        ant 'lint'
+        ant 'phpunit'
+        ant 'static-analysis'
+        }
 
 
         stage name: 'Staging', concurrency: 1
@@ -27,6 +26,12 @@
         checkpoint('Before production')
         } catch (NoSuchMethodError _) {
         echo 'Checkpoint feature available in CloudBees Jenkins Enterprise.'
+        }
+
+        stage name: 'Documentation'
+        node {
+        ant 'phpdox'
+        publishHTML(target : [allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'build/api', reportFiles: 'index.html', reportName: 'Api Documentation'])
         }
 
         stage name: 'Production', concurrency: 1
@@ -47,7 +52,9 @@
         //sh "${tool 'Maven 3.x'}/bin/mvn ${args}"
         }
 
-
+        def ant(args) {
+        sh "${tool 'ant197'}/bin/ant ${args}"
+        }
 
         def runTests(duration) {
         node {
