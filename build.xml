@@ -47,7 +47,7 @@
     <target name="composer" description="Installing composer dependencies">
         <exec executable="composer" failonerror="true">
             <arg value="install" />
-            <arg value="--dev" />
+            <arg value="--optimize-autoloader" />
             <arg value="--prefer-dist" />
             <arg value="--no-progress" />
         </exec>
