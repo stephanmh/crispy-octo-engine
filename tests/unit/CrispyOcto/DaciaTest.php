@@ -40,6 +40,10 @@ class DaciaTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1,6);
     }
 
+    public function testFailure3(){
+        $this->assertEquals(1,6);
+    }
+
     public function testSetEngine(){
         $engine = new Otto();
         $this->object->setEngine($engine);
