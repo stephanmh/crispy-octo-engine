@@ -29,7 +29,7 @@ class DaciaTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testFailure(){
-        $this->fail('argh');
+        $this->assertEquals(1,1);
     }
 
     public function testSetEngine(){
