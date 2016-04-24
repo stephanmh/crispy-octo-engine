@@ -3,14 +3,19 @@
         stage 'Dev'
         node {
         checkout scm
-        ant 'clean'
         }
 
-        stage 'QA'
+        stage name: 'QA', concurrency: 1
         node{
         ant 'lint'
         ant 'phpunit'
+        step([$class: 'JUnitResultArchiver', testResults: '**/build/logs/junit.xml'])
         ant 'static-analysis'
+        step([$class: 'WarningsPublisher', consoleParsers: [[parserName: 'PHP Runtime']]])
+        step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', pattern: '**/build/logs/checkstyle.xml'])
+        step([$class: 'PmdPublisher', pattern: '**/build/logs/pmd.xml'])
+        step([$class: 'hudson.plugins.dry.DryPublisher', pattern: '**/build/logs/pmd-cpd.xml'])
+        step([$class: 'AnalysisPublisher'])
         }
 
 
