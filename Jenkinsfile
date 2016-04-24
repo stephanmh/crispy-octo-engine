@@ -11,7 +11,7 @@
         ant 'phpunit'
         step([$class: 'JUnitResultArchiver', testResults: '**/build/logs/junit.xml'])
         ant 'static-analysis'
-        // Use hudson.plugins.checkstyle.CheckStylePublisher if JSLint Publisher Plugin or JSHint Publisher Plugin is installed
+        step([$class: 'WarningsPublisher', consoleParsers: [[parserName: 'PHP Runtime']]])
         step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', pattern: '**/build/logs/checkstyle.xml'])
         }
 
