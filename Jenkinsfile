@@ -6,7 +6,7 @@
         ant 'clean'
         }
 
-        stage 'QA', concurrency: 1
+        stage name: 'QA', concurrency: 1
         node{
         ant 'lint'
         ant 'phpunit'
