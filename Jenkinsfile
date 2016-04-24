@@ -11,7 +11,7 @@
         ant 'lint'
         ant 'phpunit'
         ant 'static-analysis'
-        step([$class: 'JUnitResultArchiver', testResults: 'build/logs/junit.xml'])
+        step([$class: 'JUnitResultArchiver', testResults: '**/build/logs/junit.xml'])
         }
 
 
