@@ -2,16 +2,15 @@
 
         stage 'Dev'
         node {
-        checkout scm
-        ant 'clean'
+        checkout scm 
         }
 
         stage name: 'QA', concurrency: 1
         node{
         ant 'lint'
         ant 'phpunit'
-        ant 'static-analysis'
         step([$class: 'JUnitResultArchiver', testResults: '**/build/logs/junit.xml'])
+        ant 'static-analysis'
         }
 
 
