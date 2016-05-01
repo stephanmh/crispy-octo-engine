@@ -20,14 +20,9 @@
         step([$class: 'hudson.plugins.sonar.SonarRunnerBuilder',
         jdk :'(Inherit From Job)',
         usePrivateRepository : false,
-        properties: [
+        properties: ''
+        )
 
-        ]
-       // properties: [
-    //    (projectName): 'crispy-octo-module',
-  //      (projectVersion) :'master',
-//        (sources): 'src/']
-        ])
 
         }
 
