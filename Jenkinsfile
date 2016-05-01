@@ -16,7 +16,7 @@
         step([$class: 'PmdPublisher', pattern: '**/build/logs/pmd.xml'])
         step([$class: 'hudson.plugins.dry.DryPublisher', pattern: '**/build/logs/pmd-cpd.xml'])
         step([$class: 'AnalysisPublisher'])
-        step([$class: 'hudson.plugins.sonar.SonarRunnerBuilder', jdk: '(Inherit From Job)', plugin: 'sonar@2.4', projectKey: 'kk-testproj-key', projectName: 'KK-Demo', sources: 'src/'])
+        step([$class: 'hudson.plugins.sonar.SonarRunnerBuilder', sonar: [projectKey: 'kk-testproj-key', projectName: 'KK-Demo', sources: 'src/'], jdk: '(Inherit From Job)', plugin: 'sonar@2.4' ])
         }
 
 
