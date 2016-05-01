@@ -83,8 +83,8 @@
         jdk('(Inherit From Job)')
         usePrivateRepository(false)
         properties: [
-        (sonar.projectName): 'crispy-octo-module'
-        (sonar.projectVersion) :'master'
+        (sonar.projectName): 'crispy-octo-module',
+        (sonar.projectVersion) :'master',
         (sonar.sources): 'src/']
         }
         }
