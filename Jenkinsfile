@@ -18,13 +18,13 @@
         step([$class: 'AnalysisPublisher'])
 
         step([$class: 'hudson.plugins.sonar.SonarRunnerBuilder',
-        jdk('(Inherit From Job)'),
-        usePrivateRepository(false),
+        jdk :'(Inherit From Job)',
+        usePrivateRepository : false,
         properties: [
         (sonar.projectName): 'crispy-octo-module',
         (sonar.projectVersion) :'master',
         (sonar.sources): 'src/']
-        ]) 
+        ])
         }
 
 
