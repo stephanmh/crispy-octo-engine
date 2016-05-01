@@ -17,10 +17,12 @@
         step([$class: 'hudson.plugins.dry.DryPublisher', pattern: '**/build/logs/pmd-cpd.xml'])
         step([$class: 'AnalysisPublisher'])
 
-        step([$class: 'hudson.plugins.sonar.SonarRunnerBuilder',
+        step(
+        [$class: 'hudson.plugins.sonar.SonarRunnerBuilder',
         jdk :'(Inherit From Job)',
         usePrivateRepository : false,
         properties: ''
+        ]
         )
 
 
