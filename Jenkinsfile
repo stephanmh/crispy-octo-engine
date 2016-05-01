@@ -20,9 +20,8 @@
         step(
         [$class: 'hudson.plugins.sonar.SonarRunnerBuilder',
         jdk :'(Inherit From Job)',
-        usePrivateRepository : false,
-        properties: ''
-        ]
+        usePrivateRepository : 'false',
+        properties: '']
         )
 
 
