@@ -16,6 +16,7 @@
         step([$class: 'PmdPublisher', pattern: '**/build/logs/pmd.xml'])
         step([$class: 'hudson.plugins.dry.DryPublisher', pattern: '**/build/logs/pmd-cpd.xml'])
         step([$class: 'AnalysisPublisher'])
+        sonar
         }
 
 
@@ -74,4 +75,16 @@
 
         def undeploy(id) {
         //sh "rm /tmp/${id}.war"
+        }
+
+        StepContext.metaClass.sonar = {
+        -> NodeBuilder nodeBuilder = new NodeBuilder()
+        stepNodes << nodeBuilder.'hudson.plugins.sonar.SonarRunnerBuilder' {
+        jdk('(Inherit From Job)')
+        usePrivateRepository(false)
+        properties: [
+        sonar.projectName : 'crispy-octo-module'
+        sonar.projectVersion :'master'
+        sonar.sources. 'src/']
+        }
         }
