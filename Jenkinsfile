@@ -17,18 +17,18 @@
         step([$class: 'hudson.plugins.dry.DryPublisher', pattern: '**/build/logs/pmd-cpd.xml'])
         step([$class: 'AnalysisPublisher'])
 
-        step(
-        [$class: 'hudson.plugins.sonar.SonarRunnerBuilder',
-        installationName: 'sonarvors',
-        sonarRunnerName: 'sonarscanner',
-        project: '',
-        properties: '',
-        javaOpts: '',
-        jdk:'(Inherit From Job)',
-        task: '',
-        additionalArguments: '' 
-        ]
-        )
+      //  step(
+      //  [$class: 'hudson.plugins.sonar.SonarRunnerBuilder',
+      //  installationName: 'sonarvors',
+      //  sonarRunnerName: 'sonarscanner',
+      //  project: '',
+      //  properties: '',
+      //  javaOpts: '',
+      //  jdk:'(Inherit From Job)',
+      //  task: '',
+      //  additionalArguments: ''
+      //  ]
+      //  )
 
         }
 
